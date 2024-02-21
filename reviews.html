@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOTHER GEMS & CO.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+</head>
+<body>
+        <section class="revheader">
+            <nav>
+
+                <a href="index.html"><img class="transparent-background" src="images/mothergemscard-removebg-preview.png" alt=""></a>
+                
+                <div class="nav-links" id="navLinks">
+                        
+                    <i class="fas fa-times" onclick="hidemenu()" ></i>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="works.html">OUR WORKS</a></li>
+                        <li><a href="reviews.html">REVIEWS</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                
+                </div>
+                <i class="fas fa-bars" onclick="showmenu()"></i>
+            </nav>
+
+            
+                <h1 class="us" text align="center">REVIEWS</h1>
+                <section class="rev">
+                                        <br>
+                <p> Welcome to our realm of feedbacks, where every opinion is a stepping stone toward perfection. At Mother Gems & Co. , we cherish the invaluable insights shared by our customers, partners, and stakeholders. </p>
+                                <br>
+                                <br>
+                                <div class="test-col">
+                                    <img src="images/smit-removebg-preview.png">
+                                    <div>
+                                    One of the best Diamond manufacturer 👌 with Best price 👌
+                                    <h3>Smit shah</h3>
+                                    </div>
+                            </div>
+                            <div class="test-col">
+                                <img src="images/anupam-removebg-preview.png">
+                                <div>
+                                Wonderful work and best Diamond manufacturers.
+                             <h3>Anumpam Sharma</h3>
+                                </div>
+                        </div>
+                        <div class="test-col">
+                            <img src="images/roshan-removebg-preview.png">
+                            <div>
+                                Amazing work !!! .
+                            <h3>Roshan mahamunkar</h3>
+                            </div>
+                    </div>
+                               
+                            </div>
+
+                <a href="contact.html" class="hero-btn">VISIT US TO KNOW MORE</a>
+            
+
+
+            <!---Reviews-->
+
+            <section class="rev">
+
+                <div class="row">
+                    <div class="blog-left">
+                        <img src="images/mothergems logo.jpg" >
+                    </div>
+                    <div class="blog-right">
+                        <div class="comment-form">
+                          <h2>Add Your Comment</h2>
+                          <textarea id="userComment" placeholder="Type your comment here"></textarea>
+                          <button onclick="addComment()">Submit Comment</button>
+                        </div>
+                  
+                        <h2> Your Comments Will Be Sent To Us </h2>
+                        <ul class="comments-list" id="commentsList">
+                          <!-- Comments will be added dynamically here -->
+                        </ul>
+                    
+
+                </div>
+            </section>
+
+           
+
+       <section cla>
+
+
+       </section>
+
+                <section class="footer">
+                    <h4>ABOUT US</h4>
+                    
+                    <p>Diamond Manufacturers Exporters and Importers.</p>
+<br>
+
+                    <div class="icons">
+                        <a href="https://www.instagram.com/mothergems_andco?igsh=em1hcGU4M21iNjNx " target="_blank" title="Instagram">
+                           <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/mothergems/" target="_blank" title="Facebook">
+                           <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn">
+                           <i class="fab fa-linkedin"></i>
+                        </a>
+                     </div>
+                     
+                     <div class="copyright">
+                        &copy; 2024 MOTHERGEMS & CO.
+                     </div>
+                     <br>
+                     <br>
+                     <a href="https://www.facebook.com/mothergems/">Made by Om Jadia</a>
+                     
+                </section>
+
+
+
+
+        <!------javascript toggle menu---->
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showmenu(){
+        navLinks.style.right="0";
+    }
+    function hidemenu(){
+        navLinks.style.right="-200px";
+    }
+
+    window.onload = function () {
+    var storedComments = JSON.parse(localStorage.getItem('userComments')) || [];
+    var commentsList = document.getElementById('commentsList');
+
+    storedComments.forEach(function (comment) {
+      var commentItem = document.createElement('li');
+      commentItem.textContent = comment;
+      commentsList.appendChild(commentItem);
+    });
+  };
+
+  function addComment() {
+    var userComment = document.getElementById('userComment').value;
+
+    if (userComment.trim() !== "") {
+      var commentItem = document.createElement('li');
+      commentItem.textContent = userComment;
+
+      var commentsList = document.getElementById('commentsList');
+      commentsList.appendChild(commentItem);
+
+      // Save the comment to local storage
+      var storedComments = JSON.parse(localStorage.getItem('userComments')) || [];
+      storedComments.push(userComment);
+      localStorage.setItem('userComments', JSON.stringify(storedComments));
+
+      document.getElementById('userComment').value = "";
+    } else {
+      alert("Please enter a valid comment.");
+    }
+  }
+</script>
+
+
+</body>
+</html>
